@@ -26,7 +26,7 @@
         $('.weatherResponse').html('');
         
         cityName = $('#cityName').val();
-        $.getJSON('http://api.openweathermap.org/data/2.5/weather?appid=1bacbd261e64f80aa7af050c51580c6f&q='+cityName, giveWeather, 'jsonp');
+        $.getJSON('https://api.openweathermap.org/data/2.5/weather?appid=1bacbd261e64f80aa7af050c51580c6f&q='+cityName, giveWeather, 'jsonp');
     }
         
     function giveWeather(data) {
