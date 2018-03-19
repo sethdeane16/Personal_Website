@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Seth Deane | Weather</title>
+	<link rel="icon" href="resources/favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/parallax.js"></script>
+    <script src="js/highlight.js"></script>
+</head>
+
+<header>
+    <nav id="navMenu"></nav>
+    <script src="js/navbar.js"></script>
+</header>
+    
+<body>
+    
+    <script>
+    var cityName;
+        
+    function getWeather(){
+        // clear previous weather data
+        $('.weatherResponse').html('');
+        
+        cityName = $('#cityName').val();
+        $.getJSON('http://api.openweathermap.org/data/2.5/weather?appid=1bacbd261e64f80aa7af050c51580c6f&q='+cityName, giveWeather, 'jsonp');
+    }
+        
+    function giveWeather(data) {
+        var description = data.weather[0].description;
+        document.getElementById("weatherOutput").innerHTML = "" + description;
+    }    
+    </script>
+    
+    <input type="text" id="cityName">
+    <button onclick="getWeather();"> Enter a city to get weather</button>
+    <p id = "weatherOutput"></p>
+
+  
+    
+
+</body>
+</html>

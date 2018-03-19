@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Seth Deane | Movie</title>
+	<link rel="icon" href="resources/favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/parallax.js"></script>
+    <script src="js/highlight.js"></script>
+</head>
+
+<header>
+    <nav id="navMenu"></nav>
+    <script src="js/navbar.js"></script>
+</header>
+    
+<body>
+    <script>
+    var movieName;
+        
+    function getMovie(){
+        // clear previous movie data
+        $('.movieResponse').html('');
+        
+        movieName = $('#movieName').val();
+        $.getJSON('https://api.themoviedb.org/3/search/movie?query='+movieName+'&api_key=e04363b6003ab8f85d77d8c8e47d2d71&language=en-US', giveMovie);
+    }
+        
+    function giveMovie(data) {
+        var title = data.results[0].title;
+        var description = data.results[0].overview;
+        document.getElementById("movieTitle").innerHTML = title;
+        document.getElementById("movieDescription").innerHTML = description;
+
+    }    
+    </script>
+
+    <input type="text" id="movieName">
+    <button onclick="getMovie();"> Enter a movie to get info for</button>
+    <p id = "movieTitle"></p>
+    <p id = "movieDescription"></p>
+
+
+
+</body>
+</html>

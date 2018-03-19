@@ -1,0 +1,82 @@
+* {
+	margin: 0px;
+	padding: 0px;
+    font: 20px Montserrat, sans-serif;
+}
+
+body {
+    margin: 51px 0 0 0; /* considering that the header is 51px */
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h2.projects {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p.projects {
+    padding-bottom: 10px; 
+}
+        
+.content {
+    padding: 10px;
+}
+
+
+/********* PARALLAX *********/ 
+#image {
+	position: relative;
+	z-index: -1;
+}
+
+#homecontent {
+    padding: 10px;
+    border-style: solid;
+	border-width: 30px 0px 0px 0px;
+	border-color: #333;
+	height: 750px;
+	width: 100%;
+	margin-top: -10px;
+	background-color: white;
+	position: relative;
+	z-index: 1;
+}
+
+
+/********* NAVIGATION *********/ 
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li.navbar {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #FF7D40;
+}
+
+
