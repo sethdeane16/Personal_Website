@@ -2,58 +2,59 @@
 <html lang="en">
 
 <head>
-    <!-- Title -->
-	<title>Seth Deane | Movie</title>
+    <!-- Standard Things -->
+	<meta charset="UTF-8" />
     
-    <!-- Favicon -->
-	<link rel="icon" href="resources/favicon.ico">
-
-    <!-- charset -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <!-- css styling -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <!-- jquery/javascript -->
+    <!-- JS and Bootstrap etc. -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    
-    <!-- javascript for parallax scrolling -->
-	<script src="js/parallax.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <!-- javascript for highlighting titles on top -->
-    <script src="js/highlight.js"></script>
+    <!-- Bootstrap Things -->
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" >
+    <link href="https://bootswatch.com/3/darkly/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Personal Things -->
+    <script src="js/movie.js"></script>
+	<link rel="icon" href="resources/favicon.ico">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <title>Seth Deane | Movie</title>
 </head>
 
 <header>
-    <nav id="navMenu"></nav>
-    <script src="js/navbar.js"></script>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                 <a class="navbar-brand" href="index.html">Seth Deane</a>     
+            </div>
+            <ul class="nav navbar-nav"> 
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li class="active"><a href="movie.html">Movie</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
     
 <body>
-    <script>
-    var movieName;
+    <div class="container">
+        <div class="page-header">
+            <h1>Learn about a Movie</h1>
+        </div>
         
-    function getMovie(){
-        // clear previous movie data
-        $('.movieResponse').html('');
-        
-        movieName = $('#movieName').val();
-        $.getJSON('https://api.themoviedb.org/3/search/movie?query='+movieName+'&api_key=e04363b6003ab8f85d77d8c8e47d2d71&language=en-US', giveMovie);
-    }
-        
-    function giveMovie(data) {
-        var title = data.results[0].title;
-        var description = data.results[0].overview;
-        document.getElementById("movieTitle").innerHTML = title;
-        document.getElementById("movieDescription").innerHTML = description;
-
-    }    
-    </script>
-
-    <input type="text" id="movieName">
-    <button onclick="getMovie();"> Enter a movie to get info for</button>
-    <p id = "movieTitle"></p>
-    <p id = "movieDescription"></p>
+        <div class="jumbotron">
+            <p>
+                To learn about a movie, enter a movie name into the box then press the button!
+            </p>
+            
+            <input class="form-control" type="text" id="movieName">
+            <button type="button" class="btn-primary btn-sm" onclick="getMovie();"> Enter a movie to get info for</button>
+            <p id = "movieTitle"></p>
+            <p id = "movieDescription"></p>
+        </div>
+    </div>
 
 
 

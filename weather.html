@@ -2,57 +2,60 @@
 <html lang="en">
 
 <head>
-    <!-- Title -->
-	<title>Seth Deane | Weather</title>
-
-    <!-- Favicon -->
-	<link rel="icon" href="resources/favicon.ico">
-
-    <!-- charset -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <!-- css styling -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <!-- jquery/javascript -->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Standard Things -->
+	<meta charset="UTF-8" />
     
-    <!-- javascript for parallax scrolling -->
-	<script src="js/parallax.js"></script>
+    <!-- JS and Bootstrap etc. -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <!-- javascript for highlighting titles on top -->
-    <script src="js/highlight.js"></script>
+    <!-- Bootstrap Things -->
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" >
+    <link href="https://bootswatch.com/3/darkly/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Personal Things -->
+    <script src="js/weather.js"></script>
+	<link rel="icon" href="resources/favicon.ico">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <title>Seth Deane | Weather</title>
 </head>
 
 <header>
-    <nav id="navMenu"></nav>
-    <script src="js/navbar.js"></script>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                 <a class="navbar-brand" href="index.html">Seth Deane</a>     
+            </div>
+            <ul class="nav navbar-nav"> 
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li class="active"><a href="weather.html">Weather</a></li>
+                <li><a href="movie.html">Movie</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
     
 <body>
     
-    <script>
-    var cityName;
+    <div class="container">
+        <div class="page-header">
+            <h1>Learn about the weather</h1>
+        </div>
         
-    function getWeather(){
-        // clear previous weather data
-        $('.weatherResponse').html('');
-        
-        cityName = $('#cityName').val();
-        $.getJSON('https://api.openweathermap.org/data/2.5/weather?appid=1bacbd261e64f80aa7af050c51580c6f&q='+cityName, giveWeather, 'jsonp');
-    }
-        
-    function giveWeather(data) {
-        var description = data.weather[0].description;
-        document.getElementById("weatherOutput").innerHTML = "" + description;
-    }    
-    </script>
-    
-    <input type="text" id="cityName">
-    <button onclick="getWeather();"> Enter a city to get weather</button>
-    <p id = "weatherOutput"></p>
+        <div class="jumbotron">
+            <p>
+                To learn about the weather of a city, enter a city then press the button!
+            </p>
+            
+            <input class="form-control" type="text" id="cityName">
+            <button type="button" class="btn-primary btn-sm" onclick="getWeather();"> Enter a city to get the weather of</button>
+            <p id="weatherOutput"></p>
 
-  
+        </div>
+    </div>
     
 
 </body>
