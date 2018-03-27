@@ -17,6 +17,7 @@
 
     <!-- Personal Things -->
     <script src="js/movie.js"></script>
+    <script src="js/weather.js"></script>
 	<link rel="icon" href="resources/favicon.ico">
 	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
     <title>Seth Deane | Movie</title>
@@ -31,8 +32,7 @@
             <ul class="nav navbar-nav"> 
                 <li><a href="resume.html">Resume</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="weather.html">Weather</a></li>
-                <li class="active"><a href="movie.html">Movie</a></li>
+                <li class="active"><a href="learn.html">Learn</a></li>
             </ul>
         </div>
     </nav>
@@ -41,22 +41,31 @@
 <body>
     <div class="container">
         <div class="page-header">
-            <h1>Learn about a Movie</h1>
+            <h1>Lets find some things out</h1>
         </div>
         
         <div class="jumbotron">
-            <p>
-                To learn about a movie, enter a movie name into the box then press the button!
-            </p>
+            <h2>Learn about a Movie</h2>
+            <p>To learn about a movie, enter a movie name into the box then press the button!</p>
             
-            <input class="form-control" type="text" id="movieName">
-            <button type="button" class="btn-primary btn-sm" onclick="getMovie();"> Enter a movie to get info for</button>
+            <input class="form-control" type="text" id="movieName" placeholder="Movie">
+            <button type="button" class="btn-primary btn-sm btn-block" onclick="getMovie();">Find out about the movie!</button>
             <p id = "movieTitle"></p>
             <p id = "movieDescription"></p>
         </div>
+
+        <div class="jumbotron">
+            <h2>Learn about the weather</h2>
+            <p>To learn about the weather in a city, enter a city in the box then press the button!</p>
+            
+            <input class="form-control" type="text" id="cityName" placeholder="City">
+            <button type="button" class="btn-primary btn-sm btn-block" onclick="getWeather();">Find out about the weather!</button>
+            <p id = "weatherOutput"></p>
+        </div>
+
+
+
     </div>
-
-
 
 </body>
 </html>
