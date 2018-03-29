@@ -17,7 +17,7 @@
 
     <!-- Personal Things -->
 	<link rel="icon" href="resources/favicon.ico">
-	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Seth Deane | Projects</title>
 </head>
 
@@ -28,7 +28,6 @@
                  <a class="navbar-brand" href="index.html">Seth Deane</a>     
             </div>
             <ul class="nav navbar-nav"> 
-                <li><a href="resume.html">Resume</a></li>
                 <li class="active"><a href="projects.html">Projects</a></li>
                 <li><a href="learn.html">Learn</a></li>
             </ul>
@@ -37,44 +36,34 @@
 </header>
     
 <body>
-	<div class="content">
-        <h1>Projects</h1>
-        <p class="projects">
-            In my time at RIT I have completed a number of academic and personal projects.
-        </p>
-<!----------------------------------------------------------------->
-        <h2 class="projects">
-            Maze Solving Arduino - Academic
-        </h2>
-        <p class="projects">
-            In "Introduction to Computer Engineering", helped a robot navigate a maze using IR sensors.
-        </p>
-<!----------------------------------------------------------------->
-        <h2 class="projects">
-            Light Sensing Arduino - Personal
-        </h2>
-        <p class="projects">
-            Using a photocell, the color of an RGB led was changed based on the light level of a room.
-            <a href="resources/RGBLED_based_on_light_level.ino" download>Source</a>
-        </p>
-        <p></p>
-        <video width="500" controls>
-            <source src="resources/RGB_LED.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-<!----------------------------------------------------------------->
-        <h2 class="projects">
-            Increment 7-segment Display Arduino - Personal
-        </h2>
-        <p class="projects">
-            A 7-segment diplay was incremented based on a button press.
-            <a href="resources/Count_on_button.ino" download>Source </a>
-        </p>
-        <p></p>
-        <video width="500" controls>
-            <source src="resources/button_increment.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-	</div>
+	<div class="container">
+        <div class="page-header">
+            <h1>Projects</h1> 
+        </div>
+        
+        <div class="jumbotron">
+            <h2>Maze Solving Arduino - Academic</h2>
+            <p>In "Introduction to Computer Engineering", helped a robot navigate a maze using IR sensors.</p>
+        </div>
+
+        <div class="jumbotron">
+            <h2>Light Sensing Arduino - Personal</h2>
+            <p>Using a photocell, the color of an RGB led was changed based on the light level of a room.<a href="resources/RGBLED_based_on_light_level.ino" download>Source</a></p>
+            <video width="500" controls><source src="resources/RGB_LED.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+        </div>
+
+        <div class="jumbotron">
+
+            <h2>Increment 7-segment Display Arduino - Personal</h2>
+            <p class="projects">
+                A 7-segment diplay was incremented based on a button press.
+                <a href="resources/Count_on_button.ino" download>Source </a>
+            </p>
+            <video width="500" controls>
+                <source src="resources/button_increment.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+    </div>
 </body>
 </html>

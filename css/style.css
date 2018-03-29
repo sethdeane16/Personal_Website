@@ -1,65 +1,6 @@
-* {
-	margin: 0px;
-	padding: 0px;
-    font: 20px Montserrat, sans-serif;
+
+html
+{
+    overflow-y:scroll;    
 }
-
-body {
-    margin: 51px 0 0 0; /* considering that the header is 51px */
-}
-
-h1 {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-h2.projects {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-p.projects {
-    padding-bottom: 10px; 
-}
-        
-.content {
-    padding: 10px;
-}
-
-
-/********* NAVIGATION *********/ 
-ul.navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-li.navbar {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #FF7D40;
-}
-
-/******** MOVIE and WEATHER *********/
-
-
 
