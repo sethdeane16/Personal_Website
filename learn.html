@@ -8,6 +8,7 @@
     <!-- JS and Bootstrap etc. -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
     <!-- Bootstrap Things -->
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -39,6 +40,7 @@
     
 <body>
     <div class="container">
+        
         <div class="page-header">
             <h1>Lets get smarter</h1>
         </div>
@@ -62,8 +64,48 @@
             <p id = "weatherOutput"></p>
         </div>
 
+        
+        
+        
+        <script>
+            var app = angular.module('myApp', []); 
+            app.controller('todoCtrl', function($scope) {
+                $scope.todoList = [{todoText:'Clean House', done:false}];
 
+                $scope.todoAdd = function() {
+                    $scope.todoList.push({todoText:$scope.todoInput, done:false});
+                    $scope.todoInput = "";
+                };
 
+                $scope.remove = function() {
+                    var oldList = $scope.todoList;
+                    $scope.todoList = [];
+                    angular.forEach(oldList, function(x) {
+                        if (!x.done) $scope.todoList.push(x);
+                    });
+                };
+            });
+        </script>
+        
+        
+        <div class="jumbotron"  ng-app="myApp" ng-controller="todoCtrl">
+            <h2>My Todo List</h2>
+
+            <form ng-submit="todoAdd()">
+                <input type="text" ng-model="todoInput" size="50" placeholder="Add New">
+                <input type="submit" value="Add New">
+            </form>
+
+            <br>
+
+            <div ng-repeat="x in todoList">
+                <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+            </div>
+
+            <p><button ng-click="remove()">Remove marked</button></p>
+        </div>
+        
+        
     </div>
 
 </body>
